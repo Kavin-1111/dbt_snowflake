@@ -1,0 +1,21 @@
+version : 2
+
+sources:
+- name : tp_source
+  database : SNOWFLAKE_SAMPLE_DATA
+  schema : TPCH_SF1
+  tables: 
+   - name : ORDERS
+     columns :
+      - name: O_ORDERKEY
+        tests:
+         - not_null
+         - unique
+
+   - name : LINEITEM
+     columns :
+      - name: L_ORDERKEY
+        tests:
+        - not_null
+        - unique
+       
